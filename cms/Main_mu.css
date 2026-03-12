@@ -147,7 +147,7 @@ a {
 }
 
 .nav-inner {
-  max-width: 112.5rem; /* 1800px / 16 */
+  max-width: 100rem; /* 1800px / 16 */
   margin: 0 auto;
   padding: 0 2rem; /* 32px / 16 */
   height: 5.5rem; /* 88px / 16 */
@@ -211,7 +211,7 @@ a {
 
 /* Main Container */
 .main-container {
-  max-width: 112.5rem; /* 1800px / 16 */
+  max-width: 100rem; /* 1800px / 16 */
   margin: 0 auto;
   padding: 0 2rem;
 }
@@ -666,7 +666,7 @@ a {
   padding: 2.5rem 0; /* 40px / 16 */
 }
 .footer-grid {
-  max-width: 112.5rem; /* 1800px / 16 */
+  max-width: 100rem; /* 1800px / 16 */
   margin: 0 auto;
   padding: 0 2rem;
   display: grid;
@@ -850,4 +850,36 @@ a {
   .location-map iframe { height: 16rem !important; min-height: 16rem !important; }
 
   .footer-grid { padding: 0 1rem !important; }
+}
+
+
+/* ─── Icon Draw Animation ──────────────────────────────────────── */
+@keyframes drawStroke {
+  from {
+    stroke-dashoffset: 300;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.draw-icon path,
+.draw-icon circle,
+.draw-icon line,
+.draw-icon polyline,
+.draw-icon rect,
+.draw-icon ellipse {
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
+  animation: drawStroke 3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Reset animation class to allow re-triggering */
+.draw-icon.no-anim path,
+.draw-icon.no-anim circle,
+.draw-icon.no-anim line,
+.draw-icon.no-anim polyline,
+.draw-icon.no-anim rect,
+.draw-icon.no-anim ellipse {
+  animation: none;
 }

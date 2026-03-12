@@ -18,18 +18,24 @@ document.addEventListener('DOMContentLoaded', () => {
     observer.observe(el);
   });
 
-  // 2. SVG Comet Animation Re-trigger (simulating React key change on hover)
-  // Instead of swapping key in React, we remove and re-add the element or clone to restart CSS animation if needed.
-  // Actually, standard CSS `:hover` triggers the animation correctly on mouse enter since we defined it as `animation: cometSweep 2200ms forwards` inside the hover state in CSS.
-  // We just need to make sure the animation runs cleanly. If re-trigger is needed every hover, we can force a reflow via JS.
+  // 2. SVG Comet & Draw Icon Animation Re-trigger on hover
   const animatedCards = document.querySelectorAll('.hero-icon-card, .mission-action-btn');
   animatedCards.forEach(card => {
     card.addEventListener('mouseenter', () => {
-      const path = card.querySelector('.hero-icon-card-comet-path, .mission-action-btn-comet-path');
-      if (path) {
-        path.style.animation = 'none';
-        void path.offsetWidth; // trigger reflow
-        path.style.animation = ''; // restore to let CSS rule take over
+      // Retrigger comet path animation
+      const cometPath = card.querySelector('.hero-icon-card-comet-path, .mission-action-btn-comet-path');
+      if (cometPath) {
+        cometPath.style.animation = 'none';
+        void cometPath.offsetWidth; // trigger reflow
+        cometPath.style.animation = '';
+      }
+
+      // Retrigger inner icon draw animation
+      const drawIcon = card.querySelector('.draw-icon');
+      if (drawIcon) {
+        // Clone and replace to restart CSS animation properly on child paths
+        const clonedIcon = drawIcon.cloneNode(true);
+        drawIcon.parentNode.replaceChild(clonedIcon, drawIcon);
       }
     });
   });
