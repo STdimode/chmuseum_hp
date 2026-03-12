@@ -11,27 +11,31 @@ html {
 /*
 @font-face {
   font-family: 'Pretendard';
-  src: url('webfont/Pretendard/Pretendard-Regular.woff2') format('woff2');
+  src: url('webfont/Pretendard/Pretendard-Regular.woff2') format('woff2'),
+	url('webfont/Pretendard/Pretendard-Regular.woff') format('woff');
   font-weight: 400;
 }
 @font-face {
   font-family: 'Pretendard';
-  src: url('webfont/Pretendard/Pretendard-Medium.woff2') format('woff2');
+  src: url('webfont/Pretendard/Pretendard-Medium.woff2') format('woff2'),
+	url('webfont/Pretendard/Pretendard-Medium.woff') format('woff');
   font-weight: 500;
 }
 @font-face {
   font-family: 'Pretendard';
-  src: url('webfont/Pretendard/Pretendard-SemiBold.woff2') format('woff2');
+  src: url('webfont/Pretendard/Pretendard-SemiBold.woff2') format('woff2'),
+	url('webfont/Pretendard/Pretendard-SemiBold.woff') format('woff');
   font-weight: 600;
 }
 @font-face {
   font-family: 'Pretendard';
-  src: url('webfont/Pretendard/Pretendard-Bold.woff2') format('woff2');
+  src: url('webfont/Pretendard/Pretendard-Bold.woff2') format('woff2'),
+	url('webfont/Pretendard/Pretendard-Bold.woff') format('woff');
   font-weight: 700;
 }
 @font-face {
   font-family: 'BookendBatang';
-  src: url('webfont/BookendBatang/TTBookendBatangR.woff2') format('woff2');
+  src: url('webfont/BookendBatang/TTBookendBatangR.ttf') format('truetype');
   font-weight: 700;
 }
 */
